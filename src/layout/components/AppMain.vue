@@ -1,0 +1,14 @@
+<template>
+  <div class="app-main">AppMain</div>
+</template>
+<script setup></script>
+<style lang="scss" scoped>
+.app-main {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 61px 20px 20px 20px;
+  box-sizing: border-box;
+}
+</style>
