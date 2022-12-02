@@ -34,7 +34,7 @@ const privateRoutes = [
     children: [
       {
         path: '/user/manage',
-        component: () => import('@/views/user-manage/index'),
+        component: () => import('@/views/user-manage/index.vue'),
         meta: {
           title: '用户管理',
           icon: 'personnel-manage'
@@ -42,15 +42,15 @@ const privateRoutes = [
       },
       {
         path: '/user/role',
-        component: () => import('@/views/role-list/index'),
+        component: () => import('@/views/role-list/index.vue'),
         meta: {
           title: '角色列表',
-          icon: 'role'
+          icon: 'Role'
         }
       },
       {
         path: '/user/permission',
-        component: () => import('@/views/permission-list/index'),
+        component: () => import('@/views/permission-list/index.vue'),
         meta: {
           title: '权限列表',
           icon: 'permission'
@@ -59,7 +59,7 @@ const privateRoutes = [
       {
         path: '/user/info/:id',
         name: 'userInfo',
-        component: () => import('@/views/user-info/index'),
+        component: () => import('@/views/user-info/index.vue'),
         meta: {
           title: '用户信息'
         }
@@ -67,7 +67,7 @@ const privateRoutes = [
       {
         path: '/user/import',
         name: 'import',
-        component: () => import('@/views/import/index'),
+        component: () => import('@/views/import/index.vue'),
         meta: {
           title: '表格导入'
         }
@@ -85,7 +85,7 @@ const privateRoutes = [
     children: [
       {
         path: '/article/ranking',
-        component: () => import('@/views/article-ranking/index'),
+        component: () => import('@/views/article-ranking/index.vue'),
         meta: {
           title: '文章排名',
           icon: 'article-ranking'
@@ -93,14 +93,14 @@ const privateRoutes = [
       },
       {
         path: '/article/:id',
-        component: () => import('@/views/article-detail/index'),
+        component: () => import('@/views/article-detail/index.vue'),
         meta: {
           title: '文章详情'
         }
       },
       {
         path: '/article/create',
-        component: () => import('@/views/article-create/index'),
+        component: () => import('@/views/article-create/index.vue'),
         meta: {
           title: '创建文章',
           icon: 'article-create'
@@ -108,7 +108,7 @@ const privateRoutes = [
       },
       {
         path: '/article/editor/:id',
-        component: () => import('@/views/article-create/index'),
+        component: () => import('@/views/article-create/index.vue'),
         meta: {
           title: '编辑文章'
         }

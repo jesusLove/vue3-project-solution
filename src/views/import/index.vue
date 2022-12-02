@@ -1,5 +1,5 @@
 <template>
-  <div>个人中心</div>
+  <div>导入</div>
 </template>
 
 <script setup></script>
