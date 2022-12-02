@@ -1,8 +1,8 @@
 <template>
   <el-icon>
     <component :is="icon"></component>
-    <span>{{ title }}</span>
   </el-icon>
+  <span>{{ title }}</span>
 </template>
 
 <script setup>

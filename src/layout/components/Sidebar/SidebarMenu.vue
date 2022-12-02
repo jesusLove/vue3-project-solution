@@ -1,10 +1,12 @@
 <template>
   <el-menu
-    :uniqueOpened="true"
-    default-active="2"
-    background-color="#545c64"
-    text-color="#fff"
-    active-text-color="#ffd04b"
+    :collapse="!appStore.sidebarOpened"
+    :default-active="activeMenu"
+    :background-color="appStore.cssVar.menuBg"
+    :text-color="appStore.cssVar.menuText"
+    :active-text-color="appStore.cssVar.menuActiveText"
+    :unique-opened="true"
+    router
   >
     <sidebar-item
       v-for="item in routes"
@@ -16,11 +18,19 @@
 
 <script setup>
 import SidebarItem from './SidebarItem.vue'
-
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { filterRouters, generateMenus } from '@/utils/route'
+import { useAppStore } from '@/stores/app.js'
+
+const appStore = useAppStore()
+console.log('--', appStore.cssVar)
 const router = useRouter()
+const route = useRoute()
+const activeMenu = computed(() => {
+  const { path } = route
+  return path
+})
 const routes = computed(() => {
   const routes = router.getRoutes()
   console.log('routes', routes)

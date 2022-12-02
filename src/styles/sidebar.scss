@@ -1,6 +1,7 @@
 #app {
   background-color: antiquewhite;
   .main-container {
+    transition: margin-left #{$sideBarDuration};
     min-height: 100%;
     transition: margin-left 0.28s;
     margin-left: $sideBarWidth;
@@ -17,6 +18,7 @@
     left: 0;
     z-index: 1001;
     overflow: hidden;
+    transition: width #{$sideBarDuration};
 
     // 重置 element-plus 的css
     .horizontal-collapse-transition {
