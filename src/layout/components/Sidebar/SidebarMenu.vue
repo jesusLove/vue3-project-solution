@@ -6,23 +6,29 @@
     text-color="#fff"
     active-text-color="#ffd04b"
   >
-    <el-sub-menu index="1">
-      <template #title>
-        <i class="el-icon-location"></i>
-        <span>导航一</span>
-      </template>
-      <el-menu-item index="1-1">选项1</el-menu-item>
-      <el-menu-item index="1-2">选项2</el-menu-item>
-    </el-sub-menu>
-    <el-menu-item index="4">
-      <el-icon>
-        <Setting />
-      </el-icon>
-      <template #title>导航四</template>
-    </el-menu-item>
+    <sidebar-item
+      v-for="item in routes"
+      :key="item.path"
+      :route="item"
+    ></sidebar-item>
   </el-menu>
 </template>
 
-<script setup></script>
+<script setup>
+import SidebarItem from './SidebarItem.vue'
+
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { filterRouters, generateMenus } from '@/utils/route'
+const router = useRouter()
+const routes = computed(() => {
+  const routes = router.getRoutes()
+  console.log('routes', routes)
+  const filterRoutes = filterRouters(routes)
+  console.log('filter', filterRoutes)
+  return generateMenus(filterRoutes)
+})
+console.log('路由', routes.value)
+</script>
 
 <style lang="scss" scoped></style>
