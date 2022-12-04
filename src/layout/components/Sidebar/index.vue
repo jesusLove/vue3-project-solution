@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="logo-container">
       <el-avatar
-        size="44"
+        :size="44"
         shape="square"
         src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
       />
