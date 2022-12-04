@@ -18,7 +18,6 @@
 
 <script setup>
 import MenuItem from './MenuItem.vue'
-import { defineProps } from 'vue'
 defineProps({
   route: {
     type: Object,

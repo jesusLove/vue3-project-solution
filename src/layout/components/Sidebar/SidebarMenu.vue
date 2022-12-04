@@ -24,7 +24,6 @@ import { filterRouters, generateMenus } from '@/utils/route'
 import { useAppStore } from '@/stores/app.js'
 
 const appStore = useAppStore()
-console.log('--', appStore.cssVar)
 const router = useRouter()
 const route = useRoute()
 const activeMenu = computed(() => {
@@ -33,9 +32,7 @@ const activeMenu = computed(() => {
 })
 const routes = computed(() => {
   const routes = router.getRoutes()
-  console.log('routes', routes)
   const filterRoutes = filterRouters(routes)
-  console.log('filter', filterRoutes)
   return generateMenus(filterRoutes)
 })
 console.log('路由', routes.value)
