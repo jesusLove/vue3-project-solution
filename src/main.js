@@ -11,6 +11,7 @@ const app = createApp(App)
 app.use(pinia)
 app.use(router)
 
+// 引入 Element-Plus/Icons
 for (const [key, component] of Object.entries(ElementPlusIcons)) {
   app.component(key, component)
 }

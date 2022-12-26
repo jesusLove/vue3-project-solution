@@ -33,9 +33,9 @@ const activeMenu = computed(() => {
 const routes = computed(() => {
   const routes = router.getRoutes()
   const filterRoutes = filterRouters(routes)
+
   return generateMenus(filterRoutes)
 })
-console.log('路由', routes.value)
 </script>
 
 <style lang="scss" scoped></style>

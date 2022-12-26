@@ -11,7 +11,7 @@ const getChildrenRoutes = (routes) => {
 }
 
 /**
- * router.getRoutes 存在子路由和一级路由，只保留路由层级的项，路由子项剔除。
+ * 剔除子路由
  * @param {*} routes  router.getRoutes()
  * @returns
  */
@@ -29,7 +29,13 @@ const isNull = (data) => {
     return true
   return false
 }
-//
+/**
+ * 生成路由菜单数组
+ *
+ * @param {*} routes
+ * @param {*} basePath
+ * @returns
+ */
 export function generateMenus(routes, basePath = '') {
   const result = []
   routes.forEach((item) => {
@@ -42,7 +48,7 @@ export function generateMenus(routes, basePath = '') {
       return
     }
     const routePath = resolve(basePath, item.path)
-    // 存在同名夫路由的情况
+    // 存在同名父路由的情况
     let route = result.find((item) => item.path === routePath)
 
     if (!route) {
