@@ -23,12 +23,14 @@ import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAppStore } from '@/stores/app.js'
 const route = useRoute()
+// 生成数组数据
 const breadcrumbData = ref([])
 const getBreadcrumbData = () => {
   breadcrumbData.value = route.matched.filter(
     (item) => item.meta && item.meta.title
   )
 }
+// 监听路由变化时触发
 watch(
   route,
   () => {
