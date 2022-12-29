@@ -6,7 +6,9 @@
         shape="square"
         src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
       />
-      <h1 class="logo-title" v-if="appStore.sidebarOpened">繁华落尽</h1>
+      <h1 class="logo-title" v-if="appStore.sidebarOpened">
+        {{ $t('msg.test') }}
+      </h1>
     </div>
     <sidebar-menu />
   </div>
